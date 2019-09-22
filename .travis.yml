@@ -8,13 +8,13 @@ script:
   - docker run intizarahmad/docker-react npm run test -- --coverage
 deploy:
   provider: elasticbeanstalk
-  region: "eu-west-1"
-  app: "docker"
-  env: "Docker-env"
-  bucket_name: "elasticbeanstalk-eu-west-1-260103589968"
-  bucket_path: "docker"
+  region: "us-east-1"
+  app: "docker-react"
+  env: "DockerReact-env"
+  bucket_name: "elasticbeanstalk-us-east-1-338801737936"
+  bucket_path: "docker-react"
   on:
     branch: master
-  access_key_id: $AWS_ACCESS_KEY
+  access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+    secure: $AWS_SECRET_ACCESS_KEY
